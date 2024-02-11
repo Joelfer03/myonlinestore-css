@@ -1,0 +1,491 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --header-bgcolor: #333;
+    --header-color: whitesmoke;
+}
+
+html {
+    font-size: 1.5rem;
+    background-image: url(pngtree-background-business-light-effect-gray-image_564159.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header {
+    background-color: var(--header-bgcolor);
+    color: var(--header-color);
+}
+
+.header-title-line {
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+    background-color: var(--header-color);
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+}
+
+.menu-icon::before {
+    transform: translate(-20px, -12px);
+}
+
+.menu-icon::after {
+    transform: translate(-20px, 12px);
+}
+
+:is(header:hover, header:focus-within) .menu-icon {
+    background-color: transparent;
+    transform: rotate(720deg);
+}
+
+:is(header:hover, header:focus-within) .menu-icon::before {
+    transform: translate(-20px) rotate(45deg);
+}
+
+:is(header:hover, header:focus-within) .menu-icon::after {
+    transform: translate(-20px) rotate(-45deg);
+}
+
+:is(header:hover, header:focus-within) nav {
+    display: block;
+}
+
+nav {
+    background-color: var(--header-bgcolor);
+    display: none;
+    transform-origin: top center;
+    animation: showMenu 0.5s ease-in-out forwards;
+}
+
+@keyframes showMenu {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scaleY(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+nav li {
+    padding: 0.5rem;
+    border-top: 1px solid var(--header-color);
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+nav a:any-link {
+    color: var(--header-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+    transform: scale(1.2);
+    transform: all 0.3s;
+}
+
+.about {
+    margin-top: 1%;
+    margin-bottom:  2%;
+    padding: 4%;
+}
+
+.appreciation {
+    margin-top: 3%;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.logo {
+    margin-top: 4%;
+    text-align: center;
+    font-style: italic;
+}
+
+.logo-of-the-company {
+    font-weight: bold;
+    padding: 2%;
+}
+
+.owner {
+    margin-top: 3%;
+    text-align: center;
+    font-style: italic;
+}
+
+.owner-of-the-company {
+    font-weight: bold;
+    padding: 2%;
+}
+
+.products {
+    text-align: center;
+    margin-top: 2%;
+    padding: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.product1 {
+    margin-top: 5%;
+}
+
+.empire-gold-plate {
+    font-weight: bold;
+    padding: 2%;
+}
+
+.product2 {
+    margin-top: 5%;
+}
+
+.multiple-choice-thomson-stoneware {
+    font-weight: bold;
+    padding: 2%;
+}
+
+.product3 {
+    margin-top: 5%;
+}
+
+.luxury-ceramic-tableware {
+    font-weight: bold;
+    padding: 2%;
+}
+
+h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    padding:10px;
+}
+
+.banner-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+.banner-container .banner{
+    background:linear-gradient(-55deg, #ff7675 29%, #d63031 29.1%, #d63031 68%, #ff7675 68.1%);
+    border-radius: 5px;
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 5px 10px #0005;
+    overflow: hidden;
+}
+
+.banner-container .banner .plate{
+    flex:1 1 250px;
+    padding:15px;
+    text-align: center;
+}
+
+.banner-container .banner .plate img{
+    width:80%;
+}
+
+.banner-container .banner .content{
+    flex:1 1 250px;
+    text-align: center;
+    padding:10px;
+    text-transform: uppercase;
+}
+
+.banner-container .banner .content span{
+    color:#eee;
+    font-size: 25px;
+}
+
+.banner-container .banner .content h3{
+    color:#fff;
+    font-size: 40px;
+}
+
+.banner-container .banner .content p{
+    color:#eee;
+    font-size: 20px;
+    padding:10px 0;
+}
+
+.banner-container .banner .content .btn{
+    display: block;
+    height:40px;
+    width:150px;
+    line-height: 40px;
+    background: #fff;
+    color:#d63031;
+    margin:5px auto;
+    text-decoration: none;
+}
+
+.banner-container .banner .women{
+    position: relative;
+    bottom: -33px;
+    padding:10px;
+    flex:1 1 250px;
+}
+
+.banner-container .banner .women img{
+    width:100%;
+}
+
+@media (max-width:768px){
+    .banner-container .banner .women{
+        display: none;
+    }
+}
+
+.banner2-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+}
+
+.banner2-container .banner2{
+    background:linear-gradient(-55deg, #285370 29%, #143163 29.1%, #143263 68%, #446297 68.1%);
+    border-radius: 5px;
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 5px 10px #0005;
+    overflow: hidden;
+}
+
+
+.banner2-container .banner2 .plate2{
+    flex:1 1 250px;
+    padding:15px;
+    text-align: center;
+}
+
+.banner2-container .banner2 .plate2 img{
+    width:80%;
+}
+
+.banner2-container .banner2 .content2{
+    flex:1 1 250px;
+    text-align: center;
+    padding:10px;
+    text-transform: uppercase;
+}
+
+.banner2-container .banner2 .content2 span{
+    color:#eee;
+    font-size: 25px;
+}
+
+.banner2-container .banner2 .content2 h3{
+    color:#fff;
+    font-size: 40px;
+}
+
+.banner2-container .banner2 .content2 p{
+    color:#eee;
+    font-size: 20px;
+    padding:10px 0;
+}
+
+.banner2-container .banner2 .content2 .btn{
+    display: block;
+    height:40px;
+    width:150px;
+    line-height: 40px;
+    background: #fff;
+    color:#d63031;
+    margin:5px auto;
+    text-decoration: none;
+}
+
+.banner2-container .banner2 .men{
+    position: relative;
+    bottom: -33px;
+    padding:10px;
+    flex:1 1 250px;
+}
+
+.banner2-container .banner2 .men img{
+    width:100%;
+}
+
+@media (max-width:768px){
+    .banner2-container .banner2 .men{
+        display: none;
+    }
+}
+
+
+.contact {
+    min-height: 100vh;
+    padding: 0%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.container {
+    max-width: 800px;
+    margin:0% auto
+}
+
+.container h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color:#333
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px
+}
+
+.contact-form {
+    text-align: left;
+}
+
+.contact-form h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color:#333
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+input:focus,
+textarea:focus{
+    outline: none;
+    box-shadow: 0 0 8px #bbb;
+}
+
+button{
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #393d3a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover{
+    background-color: #717271;
+}
+
+.contact-info{
+    text-align: left;
+    margin-right: 14%;
+}
+
+.contact-info h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info p{
+    margin-bottom: 10px;
+    color:#555
+}
+
+.contact-info i{
+    color: #5f5858;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        padding:20px;
+    }
+    .contact-wrapper{
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    background-color: #333;
+}
+
+footer p {
+    text-align: center;
+    font-size: 80%;
+    color: #bbb;
+    font-style: italic;
+}
+
+.back-to-top {
+    color: #bbb;
+}
